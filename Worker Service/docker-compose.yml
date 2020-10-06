@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    depends_on: 
+      - db
+    ports: 
+      - "80:8080"
+    command: sh -c "/wait && /sayhello"
+
+  db:
+    build: ./DB
+    
+
+
