@@ -41,5 +41,9 @@ def get_json_Workers():
 #def custom_401(error):
 #    return Response('<Why access is denied string goes here...>', 401, {'WWW-Authenticate':'Basic realm="Login Required"'})
 
-if __name__ == '__main__':
-    app.run( debug=True)
+@app.route("/")
+def hello():
+    return "Hello from Python!"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')

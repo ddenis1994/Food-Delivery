@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-service
+  name: java-service
 spec:
   selector:
-    app: workers-python
+    app: workers-java
   ports:
   - protocol: "TCP"
-    port: 6000
-    targetPort: 5000
+    port: 6001
+    targetPort: 8080
   type: LoadBalancer
 
 ---
@@ -16,19 +16,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-deployment
+  name: workers-java
 spec:
   selector:
     matchLabels:
-      app: workers-python
+      app: workers-java
   replicas: 4
   template:
     metadata:
       labels:
-        app: workers-python
+        app: workers-java
     spec:
       containers:
-      - name: workers-python
-        image: danira/flask:latest
+      - name: workers-java
+        image: openjdk:15-alpine
         ports:
-        - containerPort: 5000
+        - containerPort: 8080

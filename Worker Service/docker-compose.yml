@@ -10,6 +10,6 @@ services:
 
   db:
     build: ./DB
-    
+
 
 
