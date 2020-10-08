@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/Add_Worker.css') }}">
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'JavaScript/Add_worker.js') }}" ></script>
+    <title>Add worker</title>
+
+</head>
+
+<body>
+<div class="container">
+<h1> Workers</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <a> Worker ID</a>
+                </td>
+                <td>
+                    <a> Name</a>
+                </td>
+                <td>
+                    <a> Tel</a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {%for worker in workers.items()%}
+                <tr>
+                    <td>
+                        <input type="radio" name="optradio">
+                    </td>
+                    {%for key,value in worker.items()%}
+                        <td>{{value}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="center" >
+        <h1 > Add new worker</h1>
+        <table border="0" >
+            <tr>
+                <td>
+                    <a>Worker iD:</a>
+                </td>
+                <td>
+                    <input id="ID" type="text" maxlength="50" class="form-control"  onchange="worning_id()" >
+                </td>
+                <td>
+                    <a id="ID_worning" class="worning" > </a>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <a>Name:</a>
+                </td>
+                <td>
+                    <input  id="name" type="text" maxlength="50" class="form-control"  onchange="worning_name()" >
+                </td>
+                <td>
+                    <a id="ID_worning" class="worning" > </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>Tel:</a>
+                </td>
+                <td>
+                    <input id="tel" type="text"  maxlength="10" minlength="10"   class="form-control" onchange="worning_tel()" >
+                </td>
+                <td>
+                    <a id="ID_worning" class="worning" > </a>
+                </td>
+            </tr>
+        </table>
+
+        <input id="crf"  type="hidden" disabled value={{hash}}>
+        </br>
+        <input type="button" value="Add worker" onclick="add()" >
+        <div id="snackbar"></div>
+    </div>
+</div>
+
+</body>
+</html>
