@@ -15,7 +15,7 @@ def get_atho():# TODO need add chaeck atho
 
 
 @app.route('/workers')
-def add():
+def workers():
       if get_atho():
           return render_template('Worker.html', hash=hash,workers=get_json_Workers()), 200
       else:
@@ -23,7 +23,7 @@ def add():
 
 
 @app.route("/workers/save", methods=["POST"])
-def save():#TODO make  all pass
+def add():#TODO make  all pass
     req = request.get_json()
     if req['action']=='add':
         pass

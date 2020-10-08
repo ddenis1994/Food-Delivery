@@ -16,15 +16,11 @@
     <table>
         <thead>
             <tr>
+                  {%for key,value in workers.items()[0].worker.items()%}
                 <td>
-                    <a> Worker ID</a>
+                    <a> {{key}}</a>
                 </td>
-                <td>
-                    <a> Name</a>
-                </td>
-                <td>
-                    <a> Tel</a>
-                </td>
+                {% endfor %}
             </tr>
         </thead>
         <tbody>

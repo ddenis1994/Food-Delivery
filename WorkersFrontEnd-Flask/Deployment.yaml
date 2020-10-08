@@ -30,5 +30,6 @@ spec:
       containers:
       - name: workers-python
         image: danira/flask:latest
+        ImagePullPolicy: Always
         ports:
         - containerPort: 5000
