@@ -13,16 +13,19 @@ public class WorkerController {
     @Autowired
     private WorkerRepository workerRepository;
 
-    @RequestMapping("/")
-    public String WorkerClockIn(){
+    @RequestMapping("/updateWorker")
+    public String updateWorker(){
         return "got 222 hello world";
     }
 
-    @RequestMapping(path="/all")
-    public @ResponseBody
-    Iterable<WorkerShiftEntity> getAllUsers() {
-        // This returns a JSON or XML with the users
-        return workerRepository.findAll();
+    @RequestMapping("/checkIfWorkerExcises")
+    public String checkIfWorkerExcises(){
+        return "got 222 hello world";
+    }
+
+    @RequestMapping("/checkIfWorkerExcises")
+    public String checkIfW2orkerExcises(){
+        return "got 222 hello world";
     }
 
 }
