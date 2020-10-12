@@ -13,10 +13,18 @@
 <body>
 <div class="container">
 <h1> Workers</h1>
-    <table>
-        <thead>
+<div class="center">
+    <table id="workersTable" >
+        <thead >
             <tr>
-                  {%for key,value in workers.items()[0].worker.items()%}
+                  {%for key in workers.items() %}
+                <td>
+                    <input type="text" id="filtrInput" name="{{ key }}" onkeyup="filter{{ key }}()" placeholder="Search for {{ key }}.." >
+                </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                  {%for key,v in workers.items()%}
                 <td>
                     <a> {{key}}</a>
                 </td>
@@ -24,56 +32,24 @@
             </tr>
         </thead>
         <tbody>
-            {%for worker in workers.items()%}
+            {%for worker in workers%}
                 <tr>
-                    <td>
-                        <input type="radio" name="optradio">
-                    </td>
-                    {%for key,value in worker.items()%}
+                    {%for value in worker%}
                         <td>{{value}}</td>
                     {% endfor %}
+
+                <td>
+                    <input type="button" value="change worker">
+                </td>
+                    <td>
+                    <input type="button" value="remove worker">
+                </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <div class="center" >
-        <h1 > Add new worker</h1>
-        <table border="0" >
-            <tr>
-                <td>
-                    <a>Worker iD:</a>
-                </td>
-                <td>
-                    <input id="ID" type="text" maxlength="50" class="form-control"  onchange="worning_id()" >
-                </td>
-                <td>
-                    <a id="ID_worning" class="worning" > </a>
-                </td>
 
-            </tr>
-            <tr>
-                <td>
-                    <a>Name:</a>
-                </td>
-                <td>
-                    <input  id="name" type="text" maxlength="50" class="form-control"  onchange="worning_name()" >
-                </td>
-                <td>
-                    <a id="ID_worning" class="worning" > </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a>Tel:</a>
-                </td>
-                <td>
-                    <input id="tel" type="text"  maxlength="10" minlength="10"   class="form-control" onchange="worning_tel()" >
-                </td>
-                <td>
-                    <a id="ID_worning" class="worning" > </a>
-                </td>
-            </tr>
-        </table>
+
 
         <input id="crf"  type="hidden" disabled value={{hash}}>
         </br>
@@ -81,6 +57,30 @@
         <div id="snackbar"></div>
     </div>
 </div>
+
+
+<script>
+    {%for key,value in workers.items()%}
+function filter{{ key }}() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementsByName("{{key}}");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("workersTable");
+  tr = table. ("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+    {% endfor %}
+</script>
 
 </body>
 </html>

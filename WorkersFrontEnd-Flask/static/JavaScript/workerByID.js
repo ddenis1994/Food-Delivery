@@ -1,19 +1,35 @@
-const id = document.getElementById("ID");
-const name = document.getElementById("name");
-const tel = document.getElementById("tel");
-const crf = document.getElementById("crf");
+function findWorker() {
+    var count=0;
+    table=document.getElementById("worker").innerHTML
+    var xhttp = new XMLHttpRequest();
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function () {
+        json = this.responseText;
+        if (this.readyState == 4 && this.status == 200) {
+            table += "<table>";
+            for (var key of Object.keys(this.responseText)) {
+                table += "<tr><td>${key}</td><td><input type='text' value='${json[key]}'  ></td></tr>"
+            }
+            table += "</table><input type=\"button\" value=\"change worker\" onclick=\"changeWorker()\" ><div id=\"snackbar\"></div>";
+            count++;
+        }
+        ;
 
 
+        xhttp.open("post", '/findWorker', true);
+        xhttp.send("ID=" + document.getElementById("ID").value + "&myHash=" + document.getElementById("crf ").value);
 
 
-function  add(){
+    }
+}
+
+
+function save(){
 
     var msg_bar = document.getElementById("snackbar");
     var data = {
-        'ID':ID.value,
-        'name': name.value,
-        'tel': tel.value,
-        'action': "add"
+        'ID':document.getElementById("ID").value,
+        'myHash': document.getElementById("crf").value
     };
 
 
@@ -47,7 +63,3 @@ function  add(){
       });
 
   }
-
-
-}
-

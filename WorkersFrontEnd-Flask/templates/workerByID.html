@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/workerByID.css') }}">
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'JavaScript/workerByID.js') }}" ></script>
+    <title>Worker</title>
+</head>
+<body>
+<label>ID:</label>
+<input type="text" id="ID" placeholder="Search for worker by ID">
+<input type="button" value="find worker" onclick="findWorker()" >
+<div class="container">
+<div class="center">
+    <p id="worker">
+    </p>
+    <input id="crf"  type="hidden" disabled value={{hash}}>
+
+        </br>
+
+    </div>
+</div>
+
+</body>
+</html>
