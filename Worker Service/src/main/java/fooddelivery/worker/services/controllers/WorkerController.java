@@ -1,9 +1,8 @@
 package fooddelivery.worker.services.controllers;
 
 
-import com.google.gson.Gson;
+import fooddelivery.worker.services.business.helper.GSonFactory;
 import fooddelivery.worker.services.business.service.WorkerService;
-import fooddelivery.worker.services.data.entity.WorkerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,60 +12,43 @@ public class WorkerController {
 
 
     final WorkerService workerService;
+    final GSonFactory gSonFactory;
 
     @Autowired
-    public WorkerController(WorkerService workerService){
+    public WorkerController(WorkerService workerService,GSonFactory gSonFactory){
         this.workerService=workerService;
+        this.gSonFactory=gSonFactory;
     }
 
 
     @PostMapping("/updateWorker")
     public String updateWorker(
-            @RequestParam(value="taz", required = false)String taz,
-            @RequestParam(value="name", required = false)String name,
-            @RequestParam(value="tel", required = false)String tel,
-            @RequestParam(value="email", required = false)String email,
-            @RequestParam(value="position", required = false)Integer position,
-            @RequestParam(value="salary", required = false)Float salary){
-        WorkerEntity updatedWorker=new WorkerEntity(
-               name,
-                tel,
-                email,
-                taz,
-                position,
-                salary
-
-        );
-        workerService.updateWorker(updatedWorker);
-        Gson gson=new Gson();
-
-
-        return gson.toJson( this.workerService.getWorker(taz));
-
+            @RequestParam(value="data")String data){
+        return this.workerService.updateWorker(data);
     }
 
+
     @RequestMapping("/checkIfWorkerExcises")
-    public String checkIfWorkerExcises(){
-        return "got 222 hello world";
+    public boolean checkIfWorkerExcises(@RequestParam(value="taz")String taz){
+        return this.workerService.checkIfWorkerExists(taz);
     }
 
     @RequestMapping("/")
-    public String defult(){
-        return "got 222 hello world";
+    public String defaults(){
+        return "hi this is worker module";
     }
 
     @RequestMapping("/checkIfWorkerIsActive")
-    public String checkIfWorkerIsActive(){
-        return "got 222 hello world";
+    public Boolean checkIfWorkerIsActive(@RequestParam(value="taz")String taz){
+         return this.workerService.checkIfWorkerIsActive(taz);
     }
 
     @GetMapping("/getWorker")
     public @ResponseBody String getWorker(
             @RequestParam(value="taz", required = false)String taz
             ){
-        Gson gson = new Gson();
-        if (taz==null || taz.isEmpty()) return gson.toJson(this.workerService.getAllWorkers());
-        else return gson.toJson( this.workerService.getWorker(taz));
+        return this.workerService.getWorkerString(taz);
+
     }
 
 }

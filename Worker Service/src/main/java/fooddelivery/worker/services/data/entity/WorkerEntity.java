@@ -36,6 +36,82 @@ public class WorkerEntity
     @Column(name = "WORKER_START_DATE")
     private Date workerStartDate;
 
+    public long getInnerID() {
+        return innerID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getWorkerStartDate() {
+        return workerStartDate;
+    }
+
+    public void setWorkerStartDate(Date workerStartDate) {
+        this.workerStartDate = workerStartDate;
+    }
+
+    public Date getWorkerEndDate() {
+        return workerEndDate;
+    }
+
+    public void setWorkerEndDate(Date workerEndDate) {
+        this.workerEndDate = workerEndDate;
+    }
+
+    public String getTAZ() {
+        return TAZ;
+    }
+
+    public void setTAZ(String TAZ) {
+        this.TAZ = TAZ;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
+    public Float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Float salary) {
+        this.salary = salary;
+    }
+
+    public Boolean getWorkingRightNow() {
+        return WorkingRightNow;
+    }
+
+    public void setWorkingRightNow(Boolean workingRightNow) {
+        WorkingRightNow = workingRightNow;
+    }
+
     @Column(name = "WORKER_END_DATA")
     private Date workerEndDate;
 
