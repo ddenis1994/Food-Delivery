@@ -1,36 +1,40 @@
-function findWorker() {
-    var count=0;
-    table=document.getElementById("worker").innerHTML
+
+
+document.getElementById("BFind").onclick = function() {
+    var string = "ID=" + document.getElementById("ID").value + "&myHash=" + document.getElementById("crf").value
     var xhttp = new XMLHttpRequest();
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.open("post", '/findWorker', true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.onreadystatechange = function () {
-        json = this.responseText;
+
         if (this.readyState == 4 && this.status == 200) {
-            table += "<table>";
-            for (var key of Object.keys(this.responseText)) {
-                table += "<tr><td>${key}</td><td><input type='text' value='${json[key]}'  ></td></tr>"
+            json = JSON.parse(this.responseText);
+            table = "<h1>Worker info</h1><table id='mytable'>";
+            for (var key of Object.keys(json)) {
+                table += "<tr><td>"+key+"</td><td><input type='text' value='"+json[key]+"'></td></tr>"
             }
-            table += "</table><input type=\"button\" value=\"change worker\" onclick=\"changeWorker()\" ><div id=\"snackbar\"></div>";
-            count++;
+            table += "</table><br/><input type='button' value='change worker' id='save' ><div id='snackbar'></div>";
+            document.getElementById("worker").innerHTML=table;
+            document.getElementById("save").onclick = save;
         }
-        ;
-
-
-        xhttp.open("post", '/findWorker', true);
-        xhttp.send("ID=" + document.getElementById("ID").value + "&myHash=" + document.getElementById("crf ").value);
-
-
     }
+    xhttp.send(string.toString());
 }
 
 
-function save(){
+function save() {
 
     var msg_bar = document.getElementById("snackbar");
+    var table = document.getElementById("mytable");
     var data = {
-        'ID':document.getElementById("ID").value,
         'myHash': document.getElementById("crf").value
     };
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        var key=row.cells[0].innerHTML;
+        var val1= row.cells[1].querySelector('input').value;
+            data[key]=val1;
+    }
+
 
 
 

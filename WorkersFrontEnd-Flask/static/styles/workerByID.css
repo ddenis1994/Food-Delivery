@@ -1,1 +1,42 @@
 @import "basic.css";
+
+input {
+    font-size: 24px;
+    padding: 16px 20px;
+    border-radius: 2px;
+
+}
+
+input [type="button"] {
+    font-family: monospace;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left:  1px;
+    background-color: #8fefe7;
+}
+
+table{
+    font-size:24px;
+}
+
+td,label{
+    font-size: 24px;
+    padding: 16px 20px;
+    border-radius: 2px;
+    text-decoration: aqua;
+
+}
+
+
+h1 {
+    color: #60059f;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+}
