@@ -22,9 +22,11 @@ public class WorkerController {
 
 
     @PostMapping("/updateWorker")
-    public String updateWorker(
+    public boolean updateWorker(
             @RequestParam(value="data")String data){
-        return this.workerService.updateWorker(data);
+
+         this.workerService.updateWorker(data);
+         return true;
     }
 
 
