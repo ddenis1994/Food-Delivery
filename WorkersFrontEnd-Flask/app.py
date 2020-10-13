@@ -14,10 +14,32 @@ def get_atho():# TODO need add chaeck atho
 
 
 
+@app.route('/HFindWorker', methods=['GET'])
+def HfindWorker():
+    if get_atho():
+        return render_template('workerByID.html', hash=hash), 200
+    abort(401)
+
+
+
+
+@app.route('/findWorker', methods=['POST'])
+def findWorker():
+    flag=False
+    if request.form['myHash']==hash.__str__():
+        flag=True
+    if request.form['ID']=="":
+        return make_response("sorry need enter worker ID", 205)
+    elif flag:
+        return make_response(jsonify(get_workerByID(request.form['ID'])), 200)
+    abort(401)
+
+
+
 @app.route('/workers')
 def workers():
       if get_atho():
-          return render_template('Worker.html', hash=hash,workers=get_json_Workers()), 200
+            return render_template('Worker.html', hash=hash,workers=get_json_Workers()), 200
       else:
           abort(401)
 
@@ -25,17 +47,24 @@ def workers():
 @app.route("/workers/save", methods=["POST"])
 def add():#TODO make  all pass
     req = request.get_json()
-    if req['action']=='add':
-        pass
-    elif req['action']=='remove':
-        pass
-    elif req['action']=='change':
-        pass
-    res = make_response(jsonify(req), 200)
+    if req.get("myHash")==hash.__str__():
+        if saveInDB()==False:
+            res = make_response(jsonify({'msg':"Sorry, Can't save worker now try later."}), 200)
+        else:
+            res = make_response(jsonify({'msg': "Success, Worker is save."}), 200)
+    else:
+        abort(401)
     return res
 
+
+def saveInDB():
+    return  True
+
 def get_json_Workers():
-    pass
+    return  {"workers":[{"name":"dani","tel":"052648789","email":"dasd"},{"name":"dad","tel":"051231232648789","email":"daasdasdsd"}]}
+
+def get_workerByID(ID):
+    return {"name": "dani", "tel": "052648789", "email": "dasd"}
 
 #@app.errorhandler(401)
 #def custom_401(error):
