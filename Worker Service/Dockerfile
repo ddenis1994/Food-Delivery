@@ -1,9 +1,12 @@
+FROM gradle as BUILD
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN gradle build
+
 FROM openjdk:15-alpine
-ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} app.jar
-ENV WAIT_VERSION 2.7.2
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/$WAIT_VERSION/wait /wait
-RUN chmod +x /wait
-CMD ["/sayhello"]
+COPY --from=BUILD /usr/src/app/build/libs/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
+
+
+
 

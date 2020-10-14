@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-back-end-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: workerBackendService
+  template:
+    metadata:
+      labels:
+        app: workerBackendService
+    spec:
+      containers:
+        - name: worker-backend
+          image: denis/workerbackend
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MYSQL_HOST-localhost
+              value: worker-db-service
+          ports:
+            - containerPort: 8080
+              name: worker-backend
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker-backend-service
+spec:
+  selector:
+    app: workerBackendService
+  ports:
+    - port: 80
+      name: worker-backend-service-port
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer

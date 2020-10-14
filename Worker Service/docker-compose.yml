@@ -9,7 +9,6 @@ services:
     environment:
       - MYSQL_HOST:localhost=db
       - MYSQL_HOST:port=3306
-    command: sh -c "/wait && /sayhello"
 
   db:
     build: ./DB

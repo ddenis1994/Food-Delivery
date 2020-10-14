@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-db-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foodApp
+  template:
+    metadata:
+      labels:
+        app: foodApp
+    spec:
+      containers:
+        - name: worker-db
+          image: denis/workerdb
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3306
+              name: worker-db-port
+
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker-db-service
+spec:
+  selector:
+    app: foodApp
+  ports:
+    - port: 3306
+      name: db
+      protocol: TCP
+      targetPort: 3306
+  type: LoadBalancer
