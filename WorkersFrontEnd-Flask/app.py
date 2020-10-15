@@ -1,8 +1,9 @@
 from flask import Flask, render_template, abort, jsonify, make_response, request
 import random
 import requests
+import os
 
-
+counct='http://os.environ["ip"]:os.environ["Port"]'
 app = Flask(__name__)
 hash=random.getrandbits(128)
 
@@ -61,25 +62,25 @@ def add():#TODO make  all pass
 
 
 def creat():
-    url = 'http://127.0.0.1:80/updateWorker'
+    url = counct+'/updateWorker'
     r = requests.post(url,data={"data":{"TAZ":"123","name":"der45"}})
     print(r.content, r.text, r.url)
 
 
 def saveInDB(req):
-    url = 'http://127.0.0.1:80/updateWorker'
+    url = counct+'/updateWorker'
     r = requests.post(url,data={"data":req})
     print(r.content, r.text, r.url)
     return  r.text
 
 def get_json_Workers():
-    url = 'http://127.0.0.1:80/getWorker'
+    url = counct+'/getWorker'
     r = requests.get(url)
     print(r.content, r.json(), r.url)
     return r.json()
 
 def get_workerByID(ID):
-    url='http://127.0.0.1:80/getWorker'
+    url=counct+'/getWorker'
     payload = {'taz': ID}
     r = requests.get(url, params=payload)
     print(r.content,r.json(),r.url)
@@ -94,4 +95,4 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='127.0.0.1')

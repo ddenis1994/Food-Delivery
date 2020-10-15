@@ -30,5 +30,10 @@ spec:
       containers:
       - name: workers-python
         image: danira/flask:latest
+        env:
+          - name: ip
+            value: "worker-backend-service"
+          - name: port
+            value: "80"
         ports:
         - containerPort: 5000
