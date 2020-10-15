@@ -7,6 +7,9 @@ import fooddelivery.worker.services.data.reposotory.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 @Service
 public class WorkerService {
 
@@ -79,6 +82,16 @@ public class WorkerService {
         if (taz==null || taz.isEmpty())
             return getWorkerWithNullTazOrEmptyTaz();
         else return getWorkerWithTaz(taz);
+    }
+
+    public ArrayList<String> test(){
+        Field[] fields = WorkerEntity.class.getDeclaredFields();
+        ArrayList<String> names= new ArrayList<String>();
+        for(Field f : fields){
+            Class t = f.getType();
+            names.add(f.getName());
+        }
+        return names;
     }
 }
 class answer {

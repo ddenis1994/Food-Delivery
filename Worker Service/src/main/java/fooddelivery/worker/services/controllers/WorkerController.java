@@ -51,5 +51,10 @@ public class WorkerController {
         return workerService.getWorkerString(taz);
 
     }
+    @GetMapping("/getWorkersFields")
+    public @ResponseBody String getWorkersFields(){
+        return workerService.test().toString();
+
+    }
 
 }
