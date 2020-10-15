@@ -49,5 +49,30 @@ function  add(){
   }
 
 
-
-
+window.onload=function () {
+    document.readyState
+    var fTr, fTd, fInput, fTdList;
+    fTr = document.getElementById("filtrTR");
+    fTdList = fTr.getElementsByTagName("td");
+    for (i = 0; i < fTdList.length; i++) {
+        fTd = fTdList[i];
+        fInput = fTd.querySelector('input');
+        fInput.onkeyup = function () {
+            var input, filter, table, tr, td, i, txtValue;
+            filter = fInput.value.toUpperCase();
+            table = document.getElementById("workersTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[fTd.getAttribute("name") - 1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+}
