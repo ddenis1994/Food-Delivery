@@ -1,7 +1,6 @@
 package fooddelivery.worker.services.controllers;
 
 
-import fooddelivery.worker.services.business.helper.GSonFactory;
 import fooddelivery.worker.services.business.service.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,14 +20,12 @@ public class WorkerController {
     @PostMapping("/updateWorker")
     public boolean updateWorker(
             @RequestParam(value="data")String data){
-
-         this.workerService.updateWorker(data);
-         return true;
+        return this.workerService.updateWorker(data);
     }
 
 
     @RequestMapping("/checkIfWorkerExcises")
-    public boolean checkIfWorkerExcises(@RequestParam(value="taz")String taz){
+    public String checkIfWorkerExcises(@RequestParam(value="taz")String taz){
         return this.workerService.checkIfWorkerExists(taz);
     }
 
@@ -51,7 +48,7 @@ public class WorkerController {
     public @ResponseBody String getWorker(
             @RequestParam(value="taz", required = false)String taz
             ){
-        return this.workerService.getWorkerString(taz);
+        return workerService.getWorkerString(taz);
 
     }
 

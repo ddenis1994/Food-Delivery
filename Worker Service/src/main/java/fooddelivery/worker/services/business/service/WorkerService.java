@@ -42,19 +42,23 @@ public class WorkerService {
     }
 
 
-    public String updateWorker(String worker) {
+    public boolean updateWorker(String worker) {
         String taz = makeWorkerEntityFromJsonString(worker);
         WorkerEntity updatedWorker=getWorker(taz);
-        return generateJsonObjectFromWorkerEntity(updatedWorker);
+        return updatedWorker!= null;
+
     }
 
     public Iterable<WorkerEntity> getAllWorkers() {
         return workerRepository.findAll();
     }
 
-    public Boolean checkIfWorkerExists(String taz) {
+    public String checkIfWorkerExists(String taz) {
         WorkerEntity workerEntity=getWorker(taz);
-        return workerEntity != null;
+        if(workerEntity != null)
+            return gSonFactory.generateGsonFromObject(new answer(0,workerEntity));
+
+        return gSonFactory.generateGsonFromObject(new answer(1,false));
     }
 
     public Boolean checkIfWorkerIsActive(String taz) {
@@ -66,6 +70,7 @@ public class WorkerService {
     private String getWorkerWithNullTazOrEmptyTaz(){
         return this.gSonFactory.generateGsonFromObject(getAllWorkers());
     }
+
     private String getWorkerWithTaz(String taz){
         return this.gSonFactory.generateGsonFromObject(getWorker(taz));
     }
@@ -74,5 +79,14 @@ public class WorkerService {
         if (taz==null || taz.isEmpty())
             return getWorkerWithNullTazOrEmptyTaz();
         else return getWorkerWithTaz(taz);
+    }
+}
+class answer {
+    public Integer code;
+    public Object data;
+
+    public answer(int i, Object data) {
+        this.code=i;
+        this.data=data;
     }
 }

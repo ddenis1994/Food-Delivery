@@ -1,9 +1,6 @@
 package fooddelivery.worker.services.data.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
@@ -21,6 +18,7 @@ public class WorkerEntity
     }
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "ID")
     private long innerID;
 
