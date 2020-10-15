@@ -9,15 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class WorkerController {
 
-
-
     final WorkerService workerService;
-    final GSonFactory gSonFactory;
 
     @Autowired
-    public WorkerController(WorkerService workerService,GSonFactory gSonFactory){
+    public WorkerController(WorkerService workerService){
         this.workerService=workerService;
-        this.gSonFactory=gSonFactory;
+
     }
 
 
@@ -37,7 +34,12 @@ public class WorkerController {
 
     @RequestMapping("/")
     public String defaults(){
-        return "hi this is worker module";
+        return "hi this is worker module\n" +
+                "my api is : \n" +
+                "for updating/create worker /updateWorker with param data:json \n" +
+                "for check if worker is active /checkIfWorkerIsActive with param taz:string\n" +
+                "for check if worker Excises /checkIfWorkerExcises with param taz:string\n" +
+                "for getting worker /getWorker with param taz:string (not require}\n";
     }
 
     @RequestMapping("/checkIfWorkerIsActive")

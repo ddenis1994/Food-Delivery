@@ -23,6 +23,7 @@ spec:
           ports:
             - containerPort: 8080
               name: worker-backend
+          imagePullPolicy: Always
 
 
 ---
