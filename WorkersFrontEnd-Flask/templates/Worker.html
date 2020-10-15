@@ -16,12 +16,13 @@
     <h1> Workers</h1>
     <table id="workersTable" >
         <thead >
-            <tr>
+            <tr id="filtrTR">
                   {%for key,value in workers.items() %}
                       {% if value %}
                         {%for keys in value[0] %}
+
                 <td>
-                    <input type="text" id="filtrInput" name="{{ keys }}" onkeyup="filter{{ keys }}()" placeholder="Search for {{ keys }}.." >
+                    <input type="text" id="filtrInput" name="{{loop.index}}" placeholder="Search for {{ keys }}.." >
                 </td>
 
                           {% endfor %}
@@ -76,32 +77,6 @@
 </div>
 
 
-<script>
-    {%for key,value in workers.items() %}
-    {% if value %}
-    {%for keys in value[0] %}
-function filter{{ keys }}() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementsByName("{{keys}}");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("workersTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-        {% endfor %}
-        {% endif %}
-    {% endfor %}
-</script>
 
 </body>
 </html>
