@@ -17,9 +17,8 @@
     <table id="workersTable" >
         <thead >
             <tr id="filtrTR">
-                  {%for key,value in workers.items() %}
-                      {% if value %}
-                        {%for keys in value[0] %}
+                      {% if workers %}
+                        {%for keys in workers[0] %}
 
                 <td>
                     <input type="text" id="filtrInput" name="{{loop.index}}" placeholder="Search for {{ keys }}.." >
@@ -27,24 +26,21 @@
 
                           {% endfor %}
                       {% endif %}
-                {% endfor %}
             </tr>
             <tr>
 
-                {%for key,value in workers.items() %}
-                      {% if value %}
-                        {%for keys in value[0] %}
+
+                      {% if workers %}
+                        {%for keys in workers[0] %}
                 <td>
                     <a> {{keys}}</a>
                 </td>
                            {% endfor %}
                       {% endif %}
-                {% endfor %}
             </tr>
         </thead>
-        <tbody>
-            {%for list in workers.values()%}
-                {%for worker in list%}
+        <tbody id="workersTableBody">
+                {%for worker in workers%}
                 <tr>
                     {%for key,value in worker.items()  %}
 
@@ -63,7 +59,6 @@
                     </td>
                 </tr>
                 {% endfor %}
-            {% endfor %}
         </tbody>
     </table>
 

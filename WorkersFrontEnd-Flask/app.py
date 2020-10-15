@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, jsonify, make_response, request
 import random
+import requests
 
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ def get_atho():# TODO need add chaeck atho
 
 @app.route('/HFindWorker', methods=['GET'])
 def HfindWorker():
+    creat()
     if get_atho():
         return render_template('workerByID.html', hash=hash), 200
     abort(401)
@@ -48,7 +50,7 @@ def workers():
 def add():#TODO make  all pass
     req = request.get_json()
     if req.get("myHash")==hash.__str__():
-        if saveInDB()==False:
+        if saveInDB(req)==False:
             res = make_response(jsonify({'msg':"Sorry, Can't save worker now try later."}), 200)
         else:
             res = make_response(jsonify({'msg': "Success, Worker is save."}), 200)
@@ -57,14 +59,31 @@ def add():#TODO make  all pass
     return res
 
 
-def saveInDB():
-    return  True
+
+def creat():
+    url = 'http://127.0.0.1:80/updateWorker'
+    r = requests.post(url,data={"data":{"TAZ":"123","name":"der45"}})
+    print(r.content, r.text, r.url)
+
+
+def saveInDB(req):
+    url = 'http://127.0.0.1:80/updateWorker'
+    r = requests.post(url,data={"data":req})
+    print(r.content, r.text, r.url)
+    return  r.text
 
 def get_json_Workers():
-    return  {"workers":[{"name":"dani","tel":"052648789","email":"dasd"},{"name":"dad","tel":"051231232648789","email":"daasdasdsd"}]}
+    url = 'http://127.0.0.1:80/getWorker'
+    r = requests.get(url)
+    print(r.content, r.json(), r.url)
+    return r.json()
 
 def get_workerByID(ID):
-    return {"name": "dani", "tel": "052648789", "email": "dasd"}
+    url='http://127.0.0.1:80/getWorker'
+    payload = {'taz': ID}
+    r = requests.get(url, params=payload)
+    print(r.content,r.json(),r.url)
+    return r.json()
 
 #@app.errorhandler(401)
 #def custom_401(error):
@@ -75,4 +94,4 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run()
