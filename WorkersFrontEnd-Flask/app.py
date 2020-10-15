@@ -3,7 +3,8 @@ import random
 import requests
 import os
 
-counct='http://os.environ["ip"]:os.environ["Port"]'
+print(os.environ)
+counct='http://'+os.environ["ip"]+':'+os.environ["Port"]
 app = Flask(__name__)
 hash=random.getrandbits(128)
 
@@ -95,4 +96,4 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1')
+    app.run()
