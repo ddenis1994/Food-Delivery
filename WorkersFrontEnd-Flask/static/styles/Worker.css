@@ -4,7 +4,7 @@ h1 {
   font-size: 300%;
 }
 #filtrInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-image: url('./searchicon.png'); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
   width: 100%; /* Full-width */
@@ -17,7 +17,7 @@ h1 {
 #workersTable {
   border-collapse: collapse; /* Collapse borders */
   width: 100%; /* Full-width */
-  border: 1px solid #ddd; /* Add a grey border */
+  border: 3px solid #ddd; /* Add a grey border */
   font-size: 18px; /* Increase font-size */
 }
 
