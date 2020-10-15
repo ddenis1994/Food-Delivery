@@ -14,11 +14,12 @@ spec:
     spec:
       containers:
         - name: worker-backend
-          image: denis/workerbackend
-          imagePullPolicy: IfNotPresent
+          image: ddenis1994/worker_backend
           env:
             - name: MYSQL_HOST-localhost
-              value: worker-db-service
+              value: "worker-db-service"
+            - name: MYSQL_HOST-port
+              value: "3306"
           ports:
             - containerPort: 8080
               name: worker-backend

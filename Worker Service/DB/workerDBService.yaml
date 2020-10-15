@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
         - name: worker-db
-          image: denis/workerdb
-          imagePullPolicy: IfNotPresent
+          image: ddenis1994/workerdb
           ports:
             - containerPort: 3306
               name: worker-db-port
@@ -36,4 +35,3 @@ spec:
       name: db
       protocol: TCP
       targetPort: 3306
-  type: LoadBalancer
