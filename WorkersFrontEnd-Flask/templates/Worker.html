@@ -4,47 +4,64 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <meta charset="UTF-8">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/Add_Worker.css') }}">
-    <script type = "text/javascript" src = "{{ url_for('static', filename = 'JavaScript/Add_worker.js') }}" ></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/Worker.css') }}">
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'JavaScript/Worker.js') }}" ></script>
     <title>Add worker</title>
 
 </head>
 
 <body>
 <div class="container">
-<h1> Workers</h1>
-<div class="center">
+    <div class="center">
+    <h1> Workers</h1>
     <table id="workersTable" >
         <thead >
             <tr>
-                  {%for key in workers.items() %}
+                  {%for key,value in workers.items() %}
+                      {% if value %}
+                        {%for keys in value[0] %}
                 <td>
-                    <input type="text" id="filtrInput" name="{{ key }}" onkeyup="filter{{ key }}()" placeholder="Search for {{ key }}.." >
+                    <input type="text" id="filtrInput" name="{{ keys }}" onkeyup="filter{{ keys }}()" placeholder="Search for {{ keys }}.." >
                 </td>
+
+                          {% endfor %}
+                      {% endif %}
                 {% endfor %}
             </tr>
             <tr>
-                  {%for key,v in workers.items()%}
+
+                {%for key,value in workers.items() %}
+                      {% if value %}
+                        {%for keys in value[0] %}
                 <td>
-                    <a> {{key}}</a>
+                    <a> {{keys}}</a>
                 </td>
+                           {% endfor %}
+                      {% endif %}
                 {% endfor %}
             </tr>
         </thead>
         <tbody>
-            {%for worker in workers%}
+            {%for list in workers.values()%}
+                {%for worker in list%}
                 <tr>
-                    {%for value in worker%}
-                        <td>{{value}}</td>
-                    {% endfor %}
+                    {%for key,value in worker.items()  %}
+
+                        <td>
+                            {{value}}
+                        </td>
+
+                        {% endfor %}
+
 
                 <td>
                     <input type="button" value="change worker">
                 </td>
                     <td>
                     <input type="button" value="remove worker">
-                </td>
+                    </td>
                 </tr>
+                {% endfor %}
             {% endfor %}
         </tbody>
     </table>
@@ -60,13 +77,15 @@
 
 
 <script>
-    {%for key,value in workers.items()%}
-function filter{{ key }}() {
+    {%for key,value in workers.items() %}
+    {% if value %}
+    {%for keys in value[0] %}
+function filter{{ keys }}() {
   var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementsByName("{{key}}");
+  input = document.getElementsByName("{{keys}}");
   filter = input.value.toUpperCase();
   table = document.getElementById("workersTable");
-  tr = table. ("tr");
+  tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
@@ -79,6 +98,8 @@ function filter{{ key }}() {
     }
   }
 }
+        {% endfor %}
+        {% endif %}
     {% endfor %}
 </script>
 
