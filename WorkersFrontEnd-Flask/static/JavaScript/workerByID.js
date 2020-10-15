@@ -10,12 +10,23 @@ document.getElementById("BFind").onclick = function() {
         if (this.readyState == 4 && this.status == 200) {
             json = JSON.parse(this.responseText);
             table = "<h1>Worker info</h1><table id='mytable'>";
-            for (var key of Object.keys(json)) {
-                table += "<tr><td>"+key+"</td><td><input type='text' value='"+json[key]+"'></td></tr>"
+            if (json) {
+                for (var key of Object.keys(json)) {
+                    table += "<tr><td>" + key + "</td><td><input type='text' value='" + json[key] + "'></td></tr>"
+                }
+                table += "</table><br/><input type='button' value='change worker' id='save' >";
+                document.getElementById("worker").innerHTML = table;
+                document.getElementById("save").onclick = save;
             }
-            table += "</table><br/><input type='button' value='change worker' id='save' ><div id='snackbar'></div>";
-            document.getElementById("worker").innerHTML=table;
-            document.getElementById("save").onclick = save;
+            else {
+                var msg_bar = document.getElementById("snackbar");
+                msg_bar.innerHTML = "Sorry,Worker not found";
+                msg_bar.className = "show";
+                setTimeout(function () {
+                    msg_bar.className = msg_bar.className.replace("show", "");
+                }, 3000);
+
+            }
         }
     }
     xhttp.send(string.toString());
