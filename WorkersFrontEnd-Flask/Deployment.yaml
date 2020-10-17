@@ -1,40 +1,40 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-service
-  labels:
-    app: workers-python
+  name: worker-front-service
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 5000
-    targetPort: 5000
-    protocol: TCP
   selector:
-    app: workers-python
+    app: workerFrontService
+  ports:
+    - port: 80
+      name: worker-front-service-port
+      protocol: TCP
+      targetPort: 8083
+  type: LoadBalancer
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-deployment
+  name: worker-front-end-deployment
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: workers-python
-  replicas: 4
+      app: workerfrontService
   template:
     metadata:
       labels:
-        app: workers-python
+        app: workerfrontService
     spec:
       containers:
-      - name: workers-python
-        image: danira/flask:latest
-        env:
-          - name: ip
-            value: "worker-backend-service"
-          - name: port
-            value: "80"
-        ports:
-        - containerPort: 5000
+        - name: worker-front
+          image: danira/flask:latest
+          env:
+            - name: ip
+              value: "worker-backend-service"
+            - name: port
+              value: "81"
+          ports:
+            - containerPort: 8083
+              name: worker-front
+          imagePullPolicy: Always

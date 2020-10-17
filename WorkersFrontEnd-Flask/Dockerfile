@@ -1,8 +1,11 @@
-FROM python:latest
-RUN mkdir /flask
-WORKDIR /flask
-ADD . /flask/
-RUN pip install --upgrade pip
+FROM python:3.7-slim-buster
+
+COPY requirements.txt .
+
 RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD ["python", "/flask/app.py"]
+
+COPY . /app
+
+WORKDIR /app
+
+ENTRYPOINT [ "./deploy.sh" ]

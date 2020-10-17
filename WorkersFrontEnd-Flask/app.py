@@ -3,12 +3,13 @@ import random
 import requests
 import os
 
-print(os.environ)
-counct='http://'+os.environ["ip"]+':'+os.environ["Port"]
+
 app = Flask(__name__)
-hash=random.getrandbits(128)
 
 
+
+counct='http://'+os.environ["ip"]+':'+os.environ["port"]
+#counct='http://127.0.0.1:81'
 def get_atho():# TODO need add chaeck atho
     hash = random.getrandbits(128)
     return True
@@ -96,4 +97,4 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=8082)
