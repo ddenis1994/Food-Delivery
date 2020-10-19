@@ -73,7 +73,7 @@ def add():#TODO make  all pass
 
 def creat():
     url = counct+'/updateWorker'
-    r = requests.post(url,data={"data":{"TAZ":"123","name":"der45"}})
+    r = requests.post(url,data={"data":'{"TAZ":"123","name":"der45"}'})
     print(r.content, r.text, r.url)
 
 
