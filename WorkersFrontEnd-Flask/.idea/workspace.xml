@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77e6b7d4-7545-4882-8856-7e8bfa3c15ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/JavaScript/AddWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/styles/AddWorker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/AddWorker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/Food-Delivery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Food-Delivery.iml" afterDir="false" />
@@ -14,6 +17,33 @@
       <change beforePath="$PROJECT_DIR$/../Worker Service/DB/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/DB/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/DB/workerDBService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/DB/workerDBService.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Flask-1.1.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Flask-1.1.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Jinja2-2.11.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Jinja2-2.11.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/LICENSE.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/LICENSE.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/WHEEL" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/MarkupSafe-1.1.1.dist-info/WHEEL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Werkzeug-1.0.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/Werkzeug-1.0.1.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/certifi-2020.6.20.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/certifi-2020.6.20.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/click-7.1.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/click-7.1.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/gunicorn-20.0.4.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/gunicorn-20.0.4.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/idna-2.10.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/idna-2.10.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/itsdangerous-1.1.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/itsdangerous-1.1.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_native.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/markupsafe/_native.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/pip-20.2.3.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/pip-20.2.3.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/pkg_resources/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/pkg_resources/_vendor/pyparsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/requests-2.24.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/requests-2.24.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/setuptools-50.3.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/setuptools-50.3.1.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/setuptools/_vendor/pyparsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/setuptools/_vendor/pyparsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/urllib3-1.25.10.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Lib/site-packages/urllib3-1.25.10.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/Activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/Activate.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/activate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/deactivate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/Scripts/deactivate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/WorkersFrontEnd-Flask/pyvenv.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
@@ -30,17 +60,18 @@
       <change beforePath="$PROJECT_DIR$/../Worker Service/src/main/java/fooddelivery/worker/services/data/reposotory/WorkerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/src/main/java/fooddelivery/worker/services/data/reposotory/WorkerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Worker Service/workerBackendService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Worker Service/workerBackendService.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/WorkersFrontEnd-Flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WorkersFrontEnd-Flask.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WORK_Deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_Deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/JavaScript/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/JavaScript/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/Worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/JavaScript/workerByID.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/workerByID.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/Worker.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/Worker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/basic.css" afterDir="false" />
@@ -57,6 +88,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -95,7 +127,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -137,6 +169,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602831072969</updated>
       <workItem from="1602831136827" duration="19064000" />
+      <workItem from="1602895116069" duration="6210000" />
+      <workItem from="1603088028246" duration="8274000" />
     </task>
     <servers />
   </component>
@@ -148,6 +182,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602864694092" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603097699675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603097699675" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602891238820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

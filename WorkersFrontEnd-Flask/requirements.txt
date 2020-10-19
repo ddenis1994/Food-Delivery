@@ -1,12 +1,5 @@
 Flask
 Jinja2
-MarkupSafe
-Werkzeug
-certifi
-chardet
-click
-gunicorn
-idna
 requests
-setuptools
 urllib3
+gunicorn

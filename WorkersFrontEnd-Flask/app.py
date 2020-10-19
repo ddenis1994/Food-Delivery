@@ -5,16 +5,24 @@ import os
 
 
 app = Flask(__name__)
-
+hash = random.getrandbits(128)  # save in DB
 
 
 counct='http://'+os.environ["ip"]+':'+os.environ["port"]
-#counct='http://127.0.0.1:81'
+
+
 def get_atho():# TODO need add chaeck atho
     hash = random.getrandbits(128)
     return True
 
 
+
+
+@app.route('/AddWorker', methods=['GET'])
+def addWorker():
+    if get_atho():
+        return render_template('AddWorker.html', hash=hash), 200
+    abort(401)
 
 
 
@@ -97,4 +105,4 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8082)
+    app.run(host='0.0.0.0', port="8083")

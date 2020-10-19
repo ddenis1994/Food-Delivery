@@ -1,2 +1,2 @@
 #! /bin/sh
-gunicorn  app:app -w 2 -b 0.0.0.0:8083
+gunicorn  app:app -w 5 -b 0.0.0.0:8083

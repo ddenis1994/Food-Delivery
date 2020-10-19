@@ -17,16 +17,21 @@ document.getElementById("BFind").onclick = function() {
                 table += "</table><br/><input type='button' value='change worker' id='save' >";
                 document.getElementById("worker").innerHTML = table;
                 document.getElementById("save").onclick = save;
-            }
-            else {
+            } else {
                 var msg_bar = document.getElementById("snackbar");
                 msg_bar.innerHTML = "Sorry,Worker not found";
                 msg_bar.className = "show";
                 setTimeout(function () {
                     msg_bar.className = msg_bar.className.replace("show", "");
                 }, 3000);
-
             }
+        } else {
+            var msg_bar = document.getElementById("snackbar");
+            msg_bar.innerHTML = "Looks like there was a problem."+this.responseText.toString();
+            msg_bar.className = "show";
+            setTimeout(function () {
+                msg_bar.className = msg_bar.className.replace("show", "");
+            }, 3000);
         }
     }
     xhttp.send(string.toString());
