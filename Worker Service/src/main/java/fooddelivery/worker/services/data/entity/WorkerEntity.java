@@ -26,8 +26,6 @@ public class WorkerEntity
     private String name;
 
 
-
-
     @Column(name = "TEL")
     private String tel;
 
