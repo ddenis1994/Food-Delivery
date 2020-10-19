@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77e6b7d4-7545-4882-8856-7e8bfa3c15ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/D.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/JavaScript/AddWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/styles/AddWorker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/AddWorker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/Food-Delivery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Food-Delivery.iml" afterDir="false" />
@@ -65,17 +61,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/D.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WORK_Deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_Deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/JavaScript/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/Worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/JavaScript/Worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/Worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/JavaScript/workerByID.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/JavaScript/workerByID.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/Worker.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/Worker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/basic.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/workerByID.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/workerByID.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/AddWorker.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AddWorker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Worker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/workerByID.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workerByID.html" afterDir="false" />
     </list>
@@ -171,6 +167,7 @@
       <workItem from="1602831136827" duration="19064000" />
       <workItem from="1602895116069" duration="6210000" />
       <workItem from="1603088028246" duration="8274000" />
+      <workItem from="1603099034511" duration="779000" />
     </task>
     <servers />
   </component>
