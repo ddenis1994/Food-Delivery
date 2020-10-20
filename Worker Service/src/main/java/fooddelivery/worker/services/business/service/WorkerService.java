@@ -26,7 +26,6 @@ public class WorkerService {
 
 
     public WorkerEntity getWorker(String taz){
-
         return this.workerRepository.findWorkerEntityByTAZ(taz);
     }
 
@@ -38,16 +37,16 @@ public class WorkerService {
         return this.gSonFactory.generateGsonFromObject(workerEntity);
     }
 
-    private String makeWorkerEntityFromJsonString(String worker){
+    private WorkerEntity makeWorkerEntityFromJsonString(String worker){
         WorkerEntity workerEntity=  (WorkerEntity) this.gSonFactory.generateWorkerObjectFromJsonString(worker);
-        updateWorkerInDB(workerEntity);
-        return workerEntity.getTAZ();
+        return workerEntity;
     }
 
 
-    public boolean updateWorker(String worker) {
-        String taz = makeWorkerEntityFromJsonString(worker);
-        WorkerEntity updatedWorker=getWorker(taz);
+    public boolean updateWorker(String workerString) {
+        WorkerEntity worker = makeWorkerEntityFromJsonString(workerString);
+        updateWorkerInDB(worker);
+        WorkerEntity updatedWorker=getWorker(worker.getTAZ());
         return updatedWorker!= null;
 
     }

@@ -114,7 +114,7 @@ public class WorkerEntity
     @Column(name = "WORKER_END_DATA")
     private Date workerEndDate;
 
-    @Column(name = "TAZ")
+    @Column(name = "TAZ", unique = true)
     private String TAZ;
 
     @Column(name = "POSITION")
@@ -126,7 +126,19 @@ public class WorkerEntity
     @Column(name = "WORKING_RIGHT_NOW")
     private Boolean WorkingRightNow;
 
+    @Column(name = "LAST NAME")
+    private String lastName;
+
     public WorkerEntity() {
+        this.TAZ="000000000";
+        this.name="John";
+        this.lastName="Dou";
+        this.email="Example@Example";
+        this.salary= (float)0;
+        this.position=0;
+        this.tel="123456789";
+        this.workerStartDate=(new Date());
+
 
     }
 }
