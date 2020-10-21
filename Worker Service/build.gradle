@@ -18,6 +18,7 @@ ext {
 }
 
 dependencies {
+    def junitJupiterVersion = '5.4.2'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -27,6 +28,15 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    implementation platform('org.testcontainers:testcontainers-bom:1.14.3') //import bom
+    testImplementation('org.testcontainers:mysql') //no version specified
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testCompile "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+    testCompile "org.testcontainers:testcontainers:1.14.3"
+    testCompile "org.testcontainers:junit-jupiter:1.14.3"
 }
 
 
@@ -39,4 +49,7 @@ dependencyManagement {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
