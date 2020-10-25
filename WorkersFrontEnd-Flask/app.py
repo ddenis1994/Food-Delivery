@@ -21,7 +21,7 @@ def get_atho():# TODO need add chaeck atho
 @app.route('/AddWorker', methods=['GET'])
 def addWorker():
     if get_atho():
-        return render_template('AddWorker.html', hash=hash), 200
+        return render_template('AddWorker.html', hash=hash,fields=get_FieldsWorkers()), 200
     abort(401)
 
 
@@ -79,7 +79,7 @@ def creat():
 
 def saveInDB(req):
     url = counct+'/updateWorker'
-    r = requests.post(url,data={"data":req})
+    r = requests.post(url,data={"data":req.__str__()})
     print(r.content, r.text, r.url)
     return  r.text
 
@@ -95,6 +95,14 @@ def get_workerByID(ID):
     r = requests.get(url, params=payload)
     print(r.content,r.json(),r.url)
     return r.json()
+
+
+def get_FieldsWorkers():
+    url = counct+'/getWorkersFields'
+    r = requests.get(url)
+    print(r.text.strip('][').split(', '),type(r.text.strip('][').split(', ')))
+    return r.text.strip('][').split(', ')
+
 
 #@app.errorhandler(401)
 #def custom_401(error):

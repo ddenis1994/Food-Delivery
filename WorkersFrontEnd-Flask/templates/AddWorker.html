@@ -13,6 +13,23 @@
 <body>
 <div class="container">
     <div class="center">
+    <h1> Add new worker</h1>
+    <table>
+        {%  for field in fields %}
+            <tr id{{ TRfield }}>
+                <td>
+            <label> {{field}}</label>
+                </td>
+                <td>
+            <input type="text" id="{{ field }}">
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+        <input id="crf"  type="hidden" disabled value={{hash}}>
+        </br>
+        <input type="button" class="button" value="save" >
+        <div id="snackbar"></div>
     </div>
 </div>
 </body>
